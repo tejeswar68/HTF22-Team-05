@@ -6,6 +6,7 @@
     "bootstrap": "^5.2.2",
     "mdbreact": "^5.2.0",
     "react-bootstrap": "^2.5.0",
+    "react-date-picker": "^9.0.0",
     "react-hook-form": "^7.38.0",
     "react-icons": "^4.6.0",
     "react-offcanvas": "^0.4.0",

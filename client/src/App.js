@@ -4,22 +4,24 @@ import {Route,Routes} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Development from './components/Development'
-import Itsoftware from './components/Itsoftware'
-import Music from './components/Music'
-import Marketing from './components/Marketing'
+import Development from './components/Categories/Development'
+import Itsoftware from './components/Categories/Itsoftware'
+import Music from './components/Categories/Music'
+import Marketing from './components/Categories/Marketing'
 import Home from './components/Home';
-import Business from './components/Business'
+import Business from './components/Categories/Business'
 import Teach from './components/Teach'
-import Design from './components/Design';
-import Health from './components/Health';
+import Design from './components/Categories/Design';
+import Health from './components/Categories/Health';
 import Personal from './components/personal';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
+import Login from './components/LoginComponent/Login';
+import SignUp from './components/SignUpComponent/SignUp';
+import Instructor from './components/InstructorComponent/CreateCourse'
 function App() {
   return (
     <div>
       <Header/>
+
 
     
         
@@ -27,7 +29,7 @@ function App() {
 
           <Route path='/'  element={<Home/>}/>
           <Route path='/home'  element={<Home/>}/>
-          <Route path='/teach' element ={<Teach/>}/>
+          <Route path='/instructor' element ={<Instructor/>}/>
           <Route path='/development'  element={<Development/>}/>
           <Route path='/itsoftware'  element={<Itsoftware/>}/>
           <Route path='/business'  element={<Business/>}/>
