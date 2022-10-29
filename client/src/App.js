@@ -15,13 +15,14 @@ import Design from './components/Design';
 import Health from './components/Health';
 import Personal from './components/personal';
 import Login from './components/Login';
+import SignUp from './components/SignUp';
 function App() {
   return (
     <div>
       <Header/>
 
-
-
+    
+        
     <Routes>
 
           <Route path='/'  element={<Home/>}/>
@@ -36,6 +37,7 @@ function App() {
           <Route path='/health' element={<Health/>}/>
           <Route path='/personal' element={<Personal/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/signup' element={<SignUp/>}/>
     </Routes>
 
 

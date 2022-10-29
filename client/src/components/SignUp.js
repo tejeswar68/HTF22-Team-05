@@ -1,5 +1,5 @@
 import React from 'react'
-import './Login.css'
+import './SignUp.css'
 import {FaUserAlt} from 'react-icons/fa'
 import {MdEmail} from 'react-icons/md'
 import {RiLockPasswordFill} from 'react-icons/ri'
@@ -8,7 +8,7 @@ import {useForm} from 'react-hook-form'
 
 function SignUp() {
 
-    let {register, handleSubmit, formState:{errors}} = useForm()
+    let {register, handleSubmit, formState:{errors}} =useForm()
     
     const onFormSubmit = (userObj)=>{
         console.log(userObj)
@@ -24,15 +24,21 @@ function SignUp() {
             <div className="row justify-content-center">
               <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
+                <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
                 <form onSubmit={handleSubmit(onFormSubmit)} className="mx-1 mx-md-4">
+                  <div className="d-flex flex-row align-items-center mb-4">
+                    <FaUserAlt/>
+                    <div className="form-outline flex-fill mb-0 ms-3">
+                      <input type="text" id="name" className="form-control" placeholder='Name' {...register("name")}/>
+                      {errors.name?.type==='required'&&<p>ERUI</p>}
+                    </div>
+                  </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
                     <MdEmail/>
                     <div className="form-outline flex-fill mb-0 ms-3">
                       <input type="email" id="email" className="form-control" placeholder='Email' {...register("email")}/>
-                      
                     </div>
                   </div>
 
@@ -43,14 +49,22 @@ function SignUp() {
                     </div>
                   </div>
 
-                  <div class="form-check d-flex justify-content-end mb-5">
+                  <div className="d-flex flex-row align-items-center mb-4">
+                    <BsFillTelephoneFill/>
+                    <div className="form-outline flex-fill mb-0 ms-3">
+                      <input type="number" id="phone" className="form-control" placeholder='Mobile Number' {...register("phone")}/>
+                    </div>
+                  </div>
+
+                  <div class="form-check d-flex justify-content-center mb-5">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" {...register("check")}/>
                     <label class="form-check-label" for="form2Example3">
-                      <a href="#!">Forget Password?</a>
+                      I agree all statements in <a href="#!">Terms of service</a>
                     </label>
                   </div>
 
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" className="btn btn-primary btn-lg">Login</button>
+                    <button type="submit" className="btn btn-primary btn-lg">Register</button>
                   </div>
 
                 </form>
@@ -58,7 +72,7 @@ function SignUp() {
               </div>
               <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" className="img-fluid" alt="Sample image"/>
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" className="img-fluid" alt="Sample image"/>
 
               </div>
             </div>
